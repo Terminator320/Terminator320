@@ -682,16 +682,23 @@ h1, h2, h3, h4 {
   cursor: grab;
 }
 .sphere.is-live .sphere__stage.is-grabbing { cursor: grabbing; }
-/* Faint wireframe-globe halo behind the icons, tinted to the site accent. */
+/* Soft glow pooled at the centre of the globe, behind the wireframe + icons. */
 .sphere.is-live .sphere__stage::before {
   content: '';
   position: absolute;
-  inset: 11%;
+  inset: 14%;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 42%,
-              color-mix(in srgb, var(--violet) 12%, transparent),
-              transparent 68%);
-  border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent);
+  background: radial-gradient(circle at 50% 45%,
+              color-mix(in srgb, var(--violet) 14%, transparent),
+              transparent 70%);
+  pointer-events: none;
+}
+/* Rotating wireframe globe (drawn by skill-sphere.js), sits under the icons. */
+.sphere__wire {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
 }
 /* When the sphere is live it carries the visuals (and is aria-hidden), so the
@@ -727,8 +734,31 @@ h1, h2, h3, h4 {
 .sphere__tag iconify-icon {
   font-size: 2.05rem;
   color: inherit;
+  cursor: pointer;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              filter 200ms ease;
 }
 .sphere__tag:hover { --depth: 1 !important; }
+.sphere__tag:hover iconify-icon {
+  filter: drop-shadow(0 0 8px
+          color-mix(in srgb, var(--brand, var(--accent)) 45%, transparent));
+}
+/* Clicked / active icon: full brand colour, label shown, brand glow + bump. */
+.sphere__tag.is-active {
+  --depth: 1 !important;
+  opacity: 1 !important;
+  z-index: 200 !important;
+}
+.sphere__tag.is-active iconify-icon {
+  transform: scale(1.16);
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--brand, var(--accent)) 70%, transparent))
+          drop-shadow(0 0 24px color-mix(in srgb, var(--brand, var(--accent)) 45%, transparent));
+}
+.sphere__tag.is-active .sphere__label {
+  opacity: 1;
+  color: var(--ink);
+  font-weight: 600;
+}
 .sphere__label {
   font-family: var(--mono);
   font-size: 0.62rem;
