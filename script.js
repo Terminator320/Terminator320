@@ -160,4 +160,20 @@
     }, { rootMargin: '400px 0px' });
     ghLoader.observe(ghSection);
   }
+
+  // ── Lazy-load the skills tech sphere ──────────────────────────
+  // Enhances #stack into a rotating 3D icon cloud. On failure (or
+  // reduced motion / no JS) the original pill grid remains as the fallback.
+  const stackSection = document.getElementById('stack');
+  if (stackSection && !prefersReducedMotion) {
+    const stackLoader = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (!entry || !entry.isIntersecting) return;
+      stackLoader.disconnect();
+      import('./skill-sphere.js')
+        .then(({ initSkillSphere }) => initSkillSphere())
+        .catch(err => console.error('initSkillSphere failed:', err));
+    }, { rootMargin: '400px 0px' });
+    stackLoader.observe(stackSection);
+  }
 })();
