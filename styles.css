@@ -667,6 +667,78 @@ h1, h2, h3, h4 {
 }
 
 /* ===== Tech stack ===== */
+/* Skills tech sphere — a CSS-3D tag cloud built from the pills below.
+   The stage stays hidden until skill-sphere.js flips #skill-sphere.is-live;
+   until then (and under reduced motion / no JS) the .sphere__fallback grid
+   is the section. */
+.sphere__stage { display: none; }
+.sphere.is-live .sphere__stage {
+  display: block;
+  position: relative;
+  width: min(560px, 100%);
+  aspect-ratio: 1 / 1;
+  margin: 8px auto 0;
+  touch-action: none;
+  cursor: grab;
+}
+.sphere.is-live .sphere__stage.is-grabbing { cursor: grabbing; }
+/* Faint wireframe-globe halo behind the icons, tinted to the site accent. */
+.sphere.is-live .sphere__stage::before {
+  content: '';
+  position: absolute;
+  inset: 11%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%,
+              color-mix(in srgb, var(--violet) 12%, transparent),
+              transparent 68%);
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent);
+  pointer-events: none;
+}
+/* When the sphere is live it carries the visuals (and is aria-hidden), so the
+   pill grid is hidden from sight but kept in the a11y tree / DOM for screen
+   readers, copy-paste and SEO. */
+.sphere.is-live .sphere__fallback {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.sphere__tag {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: max-content;
+  will-change: transform, opacity;
+  color: color-mix(in srgb,
+          var(--brand, var(--accent)) calc(var(--depth, 0) * 100%), var(--faint));
+  transition: color 120ms ease;
+}
+.sphere__tag iconify-icon {
+  font-size: 2.05rem;
+  color: inherit;
+}
+.sphere__tag:hover { --depth: 1 !important; }
+.sphere__label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
+  /* Only the front-most labels read; the rest fade out quadratically. */
+  opacity: calc(var(--depth, 0) * var(--depth, 0));
+}
+
 .stack__groups {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1170,6 +1242,9 @@ h1, h2, h3, h4 {
 @media (max-width: 900px) {
   .stack__groups { grid-template-columns: 1fr; gap: 14px; }
   .stack__group { padding: 20px 20px 18px; }
+  .sphere.is-live .sphere__stage { width: min(360px, 88vw); }
+  .sphere__tag iconify-icon { font-size: 1.7rem; }
+  .sphere__label { font-size: 0.56rem; }
   .projects__grid { grid-template-columns: 1fr; }
   .card--featured { grid-template-columns: 1fr; gap: 22px; }
   .card--featured .card__bullets { grid-template-columns: 1fr; }
