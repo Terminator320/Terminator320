@@ -13,7 +13,7 @@ const REST_PITCH = -0.18;  // gentle downward tilt at rest
 const DRAG_GAIN = 0.0055;  // pointer pixels → radians
 const PERSPECTIVE = 1.9;   // depth foreshortening (× radius); higher = flatter
 const TAP_SLOP = 6;        // px of movement still counted as a tap, not a drag
-const WIRE_RGB = '113, 100, 245'; // --violet, for the wireframe globe lines
+const WIRE_RGB_FALLBACK = '113, 100, 245'; // --violet, for the wireframe globe lines
 
 export function initSkillSphere() {
   const prefersReducedMotion =
@@ -49,6 +49,15 @@ export function initSkillSphere() {
   // Precompute lat/long ring point sets once; each frame we just rotate +
   // project them rather than regenerating the geometry.
   const rings = buildRings();
+
+  // Wireframe colour comes from --sphere-wire so it tracks the active theme.
+  const readWireRgb = () => {
+    const v = getComputedStyle(document.documentElement)
+      .getPropertyValue('--sphere-wire').trim();
+    return v || WIRE_RGB_FALLBACK;
+  };
+  let wireRgb = readWireRgb();
+  window.addEventListener('themechange', () => { wireRgb = readWireRgb(); });
 
   // ── Build the DOM tags, one per skill ───────────────────────
   const tags = items.map((it) => {
@@ -178,7 +187,7 @@ export function initSkillSphere() {
           ctx.moveTo(prevX, prevY);
           ctx.lineTo(sx, sy);
           const a = 0.04 + ((d + prevD) / 2) * 0.2; // far side fainter
-          ctx.strokeStyle = `rgba(${WIRE_RGB}, ${a.toFixed(3)})`;
+          ctx.strokeStyle = `rgba(${wireRgb}, ${a.toFixed(3)})`;
           ctx.stroke();
         }
         prevX = sx; prevY = sy; prevD = d; has = true;
