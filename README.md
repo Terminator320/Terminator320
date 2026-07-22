@@ -7,14 +7,14 @@
   [![Devpost](https://img.shields.io/badge/Devpost-003E54?style=for-the-badge&logo=devpost&logoColor=white)](https://devpost.com/Terminator320)
   [![Profile Views](https://komarev.com/ghpvc/?username=gvogas&style=for-the-badge&color=0F19FC&label=PROFILE+VIEWS)](https://github.com/gvogas)
 
-  Portfolio site: **[gvogas.github.io](https://gvogas.github.io/)** (fair warning: it has a 3D downtown Montréal built out of my commit history)
+  Portfolio site: **[gvogas.github.io](https://gvogas.github.io/)** — includes an interactive 3D visualization of my repositories
 </div>
 
 ---
 
 ## About Me
 
-I'm a CS student at Vanier College in Montréal. Most of what I know comes from taking on projects slightly too big for me: a scheduling app a client uses every day, a ticketing site my team deployed, a desktop POS system, and a Unity game. Outside of class it's mostly robotics and hockey.
+I'm a CS student at Vanier College in Montréal. I've learned primarily by building: a scheduling app a client uses every day, a ticketing site my team deployed, a desktop POS system, and a Unity game I contribute to. Outside of coursework, my main interests are robotics and hockey analytics.
 
 ---
 
@@ -98,7 +98,7 @@ Event ticketing site built with two classmates. Users buy tickets for concerts, 
 <details>
 <summary>What it does</summary>
 
-Hackathon project from MariHacks. Give it a topic (and your notes, PDFs, or slides if you have them) and it generates study material. There's also a coin shop, a plant pet that takes damage when you get questions wrong, and Spotify playback, because hackathons.
+Hackathon project from MariHacks. Give it a topic — and optionally your notes, PDFs, or slides — and it generates study material, with a coin economy, a quiz-linked plant companion, and optional Spotify playback layered on top.
 
 - AI research agent (Tavily) + content agent (Groq/LLaMA 3.3) generate structured notes, 1–30 flashcards, and 1–20 multiple-choice quiz questions at beginner / intermediate / advanced difficulty
 - Personalized 1–30 day study plan with priority tagging and extra time automatically allocated to weak areas from your latest quiz
@@ -122,7 +122,7 @@ Hackathon project from MariHacks. Give it a topic (and your notes, PDFs, or slid
 <details>
 <summary>What it does</summary>
 
-Final project for my programming patterns course: a JavaFX point-of-sale system where every pattern we covered had to actually run in the app.
+Final project for my programming patterns course: a JavaFX point-of-sale system built around the design patterns covered in class.
 
 - Multi-screen JavaFX GUI: main menu, order flow, inventory management, sales analytics, and payment
 - **Factory Method** pattern for payment processing — Cash, Debit, and Credit each implemented as concrete factories
