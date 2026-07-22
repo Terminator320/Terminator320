@@ -7,7 +7,7 @@
   [![Devpost](https://img.shields.io/badge/Devpost-003E54?style=for-the-badge&logo=devpost&logoColor=white)](https://devpost.com/Terminator320)
   [![Profile Views](https://komarev.com/ghpvc/?username=gvogas&style=for-the-badge&color=0F19FC&label=PROFILE+VIEWS)](https://github.com/gvogas)
 
-  Portfolio site: **[gvogas.github.io](https://gvogas.github.io/)** — includes an interactive 3D visualization of my repositories
+  Portfolio site: **[gvogas.github.io](https://gvogas.github.io/)**, with an interactive 3D visualization of my repositories
 </div>
 
 ---
@@ -58,13 +58,13 @@ Built for a service company that was doing all of its scheduling on paper. It's 
 - Real-time appointment calendar with per-employee color coding and admin/employee role separation
 - Full client directory with accent-insensitive search across large record sets
 - In-app photo capture, auto-compression, and background upload to Firebase Storage
-- Invite-only employee onboarding — admin creates account first, only pre-whitelisted emails can register
-- Light/dark mode, text scaling, multi-language support — all persisted across sessions
+- Invite-only employee onboarding: admin creates the account first, and only pre-whitelisted emails can register
+- Light/dark mode, text scaling, and multi-language support, all persisted across sessions
 - Google Places API for address autocomplete on client records
 
-**Architecture:** Feature-first folder structure; all DB access mediated through per-feature service classes — screens never query Firestore directly. Single centralized route handler.
+**Architecture:** Feature-first folder structure; all DB access mediated through per-feature service classes, so screens never query Firestore directly. Single centralized route handler.
 
-**Up next:** Wave billing integration — completed appointments auto-generate invoices, sync client records, and surface payment status in-app.
+**Up next:** Wave billing integration: completed appointments auto-generate invoices, sync client records, and surface payment status in-app.
 
 </details>
 
@@ -81,7 +81,7 @@ Event ticketing site built with two classmates. Users buy tickets for concerts, 
 
 - User accounts with event browsing, ticket purchase, and order history
 - Admin dashboard for event creation, ticket inventory control, and transaction monitoring
-- Built on a custom Slim MVC framework with Twig templating — no off-the-shelf CMS
+- Built on a custom Slim MVC framework with Twig templating, no off-the-shelf CMS
 - Internationalization support via `/translations` directory
 - CI/CD pipeline via GitHub Actions deploying to cPanel on push
 
@@ -98,16 +98,16 @@ Event ticketing site built with two classmates. Users buy tickets for concerts, 
 <details>
 <summary>What it does</summary>
 
-Hackathon project from MariHacks. Give it a topic — and optionally your notes, PDFs, or slides — and it generates study material, with a coin economy, a quiz-linked plant companion, and optional Spotify playback layered on top.
+Hackathon project from MariHacks. Give it a topic, plus optionally your notes, PDFs, or slides, and it generates study material, with a coin economy, a quiz-linked plant companion, and optional Spotify playback layered on top.
 
 - AI research agent (Tavily) + content agent (Groq/LLaMA 3.3) generate structured notes, 1–30 flashcards, and 1–20 multiple-choice quiz questions at beginner / intermediate / advanced difficulty
 - Personalized 1–30 day study plan with priority tagging and extra time automatically allocated to weak areas from your latest quiz
 - Supports uploaded `.pdf`, `.pptx`, `.txt`, and `.md` files as study sources alongside web research
 - Coin economy with four upgrade tracks, a growable plant pet that heals on correct answers and takes damage on wrong ones, and seven unlockable tier skins
-- Optional Spotify Connect integration — OAuth, device selection, playlist/track search, and full playback controls
+- Optional Spotify Connect integration: OAuth, device selection, playlist/track search, and full playback controls
 - JWT auth, configurable SlowAPI rate limiting, Fernet-encrypted Spotify tokens, and pytest async coverage across auth, quiz, shop, and Spotify flows
 
-**Architecture:** Feature-first FastAPI routers (`auth`, `study`, `quiz`, `plan`, `shop`, `profile`, `plant`, `spotify`), dedicated agent layer for AI/search, service layer for all business logic — no framework on the frontend, zero build step.
+**Architecture:** Feature-first FastAPI routers (`auth`, `study`, `quiz`, `plan`, `shop`, `profile`, `plant`, `spotify`), dedicated agent layer for AI/search, service layer for all business logic. No framework on the frontend, zero build step.
 
 **Team:** George Vogas · 3 collaborators
 
@@ -117,7 +117,7 @@ Hackathon project from MariHacks. Give it a topic — and optionally your notes,
 
 ### Point-of-Sales Patterns &nbsp;·&nbsp; [View Repo →](https://github.com/gvogas/Point-of-Sales_Patterns)
 
-> **Java · JavaFX · MySQL · Maven · JDK 24** &nbsp;·&nbsp; *Final Project — Programming Patterns Course*
+> **Java · JavaFX · MySQL · Maven · JDK 24** &nbsp;·&nbsp; *Final Project · Programming Patterns Course*
 
 <details>
 <summary>What it does</summary>
@@ -125,8 +125,8 @@ Hackathon project from MariHacks. Give it a topic — and optionally your notes,
 Final project for my programming patterns course: a JavaFX point-of-sale system built around the design patterns covered in class.
 
 - Multi-screen JavaFX GUI: main menu, order flow, inventory management, sales analytics, and payment
-- **Factory Method** pattern for payment processing — Cash, Debit, and Credit each implemented as concrete factories
-- **Multithreaded profit calculator** — splits the sales list across two threads with semaphore synchronization for safe aggregation
+- **Factory Method** pattern for payment processing: Cash, Debit, and Credit each implemented as concrete factories
+- **Multithreaded profit calculator** that splits the sales list across two threads with semaphore synchronization for safe aggregation
 - MySQL-backed inventory, menu items, ingredients, and sales orders with a full SQL schema included
 - MVC-inspired structure with centralized logging to file
 
@@ -138,7 +138,7 @@ Final project for my programming patterns course: a JavaFX point-of-sale system 
 
 ### The Rogue Market &nbsp;·&nbsp; [View Repo →](https://github.com/gvogas/Star-wars-Interactive-Web-Application)
 
-> **JavaScript · HTML · CSS · JSON · XML** &nbsp;·&nbsp; *Final Project — Internet Programming Course*
+> **JavaScript · HTML · CSS · JSON · XML** &nbsp;·&nbsp; *Final Project · Internet Programming Course*
 
 <details>
 <summary>What it does</summary>
@@ -147,7 +147,7 @@ Star Wars–themed store for my internet programming final. Twelve pages, vanill
 
 - Live product search with suggestion dropdown and highlighted infinite-scroll results
 - Shopping cart with per-item quantity control, subtotal, and localStorage persistence
-- Full checkout flow — tax calculation, payment method validation, order confirmation
+- Full checkout flow: tax calculation, payment method validation, order confirmation
 - Cookie-based user profile system with editable avatar
 - Dynamic product rendering from category JSONs; XML-powered navigation via AJAX
 - Modular JS: `AuthModel`, `CartManagement`, `ProductModel`, `SearchModel`, `FormValidation`, injected `Header`/`Footer`
@@ -164,7 +164,7 @@ Star Wars–themed store for my internet programming final. Twelve pages, vanill
 <details>
 <summary>What it does</summary>
 
-A Unity game I contribute to — mostly gameplay code and custom shaders (the repo is about half ShaderLab/HLSL).
+A Unity game I contribute to, mostly gameplay code and custom shaders (the repo is about half ShaderLab/HLSL).
 
 </details>
 
