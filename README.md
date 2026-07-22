@@ -22,8 +22,8 @@ I'm a CS student at Vanier College in Montréal. I've learned primarily by build
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=gvogas&show_icons=true&hide_border=true&bg_color=1a0535&title_color=54D5FF&text_color=cdd8f7&icon_color=7164F5&ring_color=0F19FC&rank_icon=github" />
-    <img height="170" alt="George's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=gvogas&show_icons=true&bg_color=ffffff&title_color=3A06BA&text_color=353963&icon_color=7164F5&ring_color=0F19FC&border_color=e2e5f6&rank_icon=github" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gvogas/gvogas/stats/github-stats-dark.svg" />
+    <img height="170" alt="George's GitHub stats" src="https://raw.githubusercontent.com/gvogas/gvogas/stats/github-stats-light.svg" />
   </picture>
   &nbsp;&nbsp;
   <picture>
@@ -32,8 +32,8 @@ I'm a CS student at Vanier College in Montréal. I've learned primarily by build
   </picture>
   <br/><br/>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=gvogas&layout=compact&langs_count=8&hide_border=true&bg_color=1a0535&title_color=54D5FF&text_color=cdd8f7&icon_color=7164F5" />
-    <img alt="Most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gvogas&layout=compact&langs_count=8&bg_color=ffffff&title_color=3A06BA&text_color=353963&icon_color=7164F5&border_color=e2e5f6" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gvogas/gvogas/stats/top-langs-dark.svg" />
+    <img alt="Most used languages" src="https://raw.githubusercontent.com/gvogas/gvogas/stats/top-langs-light.svg" />
   </picture>
   <br/><br/>
   <picture>
