@@ -5,10 +5,13 @@
 
   <br/>
 
+  [![Portfolio](https://img.shields.io/badge/Portfolio-gvogas.github.io-3A06BA?style=for-the-badge&logo=googlechrome&logoColor=white)](https://gvogas.github.io/)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/george-vogas-b13944338/)
   [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gvogas)
   [![Devpost](https://img.shields.io/badge/Devpost-003E54?style=for-the-badge&logo=devpost&logoColor=white)](https://devpost.com/Terminator320)
   [![Profile Views](https://komarev.com/ghpvc/?username=gvogas&style=for-the-badge&color=0F19FC&label=PROFILE+VIEWS)](https://github.com/gvogas)
+
+  **→ Explore the interactive portfolio — 3D Montréal commit skyline included: [gvogas.github.io](https://gvogas.github.io/)**
 </div>
 
 ---
@@ -24,11 +27,25 @@ I'm a CS student who gravitates toward projects that solve real problems for rea
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gvogas&theme=dracula" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=gvogas&show_icons=true&hide_border=true&bg_color=1a0535&title_color=54D5FF&text_color=cdd8f7&icon_color=7164F5&ring_color=0F19FC&rank_icon=github" />
+    <img height="170" alt="George's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=gvogas&show_icons=true&bg_color=ffffff&title_color=3A06BA&text_color=353963&icon_color=7164F5&ring_color=0F19FC&border_color=e2e5f6&rank_icon=github" />
+  </picture>
   &nbsp;&nbsp;
-  <img height="170" src="https://streak-stats.demolab.com?user=gvogas&hide_border=true&background=1a0535&ring=7164F5&fire=0F19FC&currStreakLabel=54D5FF&sideLabels=7164F5&dates=9a9cc0&currStreakNum=ffffff&sideNums=ffffff&stroke=3A06BA" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=gvogas&hide_border=true&background=1a0535&ring=7164F5&fire=0F19FC&currStreakLabel=54D5FF&sideLabels=7164F5&dates=9a9cc0&currStreakNum=ffffff&sideNums=ffffff&stroke=3A06BA" />
+    <img height="170" alt="GitHub streak stats" src="https://streak-stats.demolab.com?user=gvogas&background=ffffff&ring=0F19FC&fire=3A06BA&currStreakLabel=3A06BA&sideLabels=3A06BA&dates=6b6f93&currStreakNum=1a1c3d&sideNums=1a1c3d&stroke=e2e5f6&border=e2e5f6" />
+  </picture>
   <br/><br/>
-  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gvogas&theme=dracula" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=gvogas&layout=compact&langs_count=8&hide_border=true&bg_color=1a0535&title_color=54D5FF&text_color=cdd8f7&icon_color=7164F5" />
+    <img alt="Most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gvogas&layout=compact&langs_count=8&bg_color=ffffff&title_color=3A06BA&text_color=353963&icon_color=7164F5&border_color=e2e5f6" />
+  </picture>
+  <br/><br/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gvogas/gvogas/output/github-snake-dark.svg" />
+    <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/gvogas/gvogas/output/github-snake.svg" />
+  </picture>
 </div>
 
 ---
