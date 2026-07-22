@@ -1,30 +1,24 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:3F0282,50:3A06BA,100:7164F5&height=200&section=header&text=George%20Vogas&fontSize=60&fontColor=ffffff&fontAlignY=35&desc=CS%20Student%20%40%20Vanier%20College&descAlignY=55&descSize=20&animation=fadeIn" width="100%" />
 
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=7164F5&center=true&vCenter=true&width=600&lines=Building+production+software%2C+not+demos;Full-stack+%7C+Mobile+%7C+Systems;Open+to+internship+%26+collaboration" alt="Typing SVG" />
-
-  <br/>
-
   [![Portfolio](https://img.shields.io/badge/Portfolio-gvogas.github.io-3A06BA?style=for-the-badge&logo=googlechrome&logoColor=white)](https://gvogas.github.io/)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/george-vogas-b13944338/)
   [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gvogas)
   [![Devpost](https://img.shields.io/badge/Devpost-003E54?style=for-the-badge&logo=devpost&logoColor=white)](https://devpost.com/Terminator320)
   [![Profile Views](https://komarev.com/ghpvc/?username=gvogas&style=for-the-badge&color=0F19FC&label=PROFILE+VIEWS)](https://github.com/gvogas)
 
-  **→ Explore the interactive portfolio — 3D Montréal commit skyline included: [gvogas.github.io](https://gvogas.github.io/)**
+  Portfolio site: **[gvogas.github.io](https://gvogas.github.io/)** (fair warning: it has a 3D downtown Montréal built out of my commit history)
 </div>
 
 ---
 
-## 👨‍💻 About Me
+## About Me
 
-I'm a CS student who gravitates toward projects that solve real problems for real users. My background covers full-stack web development, mobile apps, desktop software, and database design — with a strong emphasis on clean architecture and practical patterns. I've shipped a **client-commissioned production app** still actively in use, collaborated on a **Unity game** with custom HLSL shaders, and built everything from MVC web platforms to modular JS e-commerce frontends entirely from scratch.
-
-**I care about:** clean code structure, meaningful UX, and building things that actually work outside the classroom.
+I'm a CS student at Vanier College in Montréal. Most of what I know comes from taking on projects slightly too big for me: a scheduling app a client uses every day, a ticketing site my team deployed, a desktop POS system, and a Unity game. Outside of class it's mostly robotics and hockey.
 
 ---
 
-## 📊 GitHub Stats
+## GitHub Stats
 
 <div align="center">
   <picture>
@@ -50,16 +44,16 @@ I'm a CS student who gravitates toward projects that solve real problems for rea
 
 ---
 
-## 🚀 Projects
+## Projects
 
-### 📅 Scheduling App &nbsp;·&nbsp; [View Repo →](https://github.com/gvogas/Scheduling-App)
+### Scheduling App &nbsp;·&nbsp; [View Repo →](https://github.com/gvogas/Scheduling-App)
 
 > **Flutter · Firebase · Google Places API · Dart** &nbsp;·&nbsp; *Client-commissioned · Production · Android*
 
 <details>
 <summary>What it does</summary>
 
-A real business application built for a service company to replace paper-based scheduling and fragmented team communication. Not a demo — actively used.
+Built for a service company that was doing all of its scheduling on paper. It's been in daily use since I delivered it.
 
 - Real-time appointment calendar with per-employee color coding and admin/employee role separation
 - Full client directory with accent-insensitive search across large record sets
@@ -76,14 +70,14 @@ A real business application built for a service company to replace paper-based s
 
 ---
 
-### 🎟️ TicketMaestrix &nbsp;·&nbsp; [View Website →](https://ticketmaestrix.shop/) &nbsp;·&nbsp; [View Repo →](https://github.com/gvogas/Ticketmaestrix)
+### TicketMaestrix &nbsp;·&nbsp; [View Website →](https://ticketmaestrix.shop/) &nbsp;·&nbsp; [View Repo →](https://github.com/gvogas/Ticketmaestrix)
 
 > **PHP · Twig · Slim MVC · MySQL · GitHub Actions · cPanel** &nbsp;·&nbsp; *Team Project · Deployed*
 
 <details>
 <summary>What it does</summary>
 
-A full-stack event ticketing platform — users browse and purchase tickets for concerts, raffles, and movies; admins manage events, availability, and transactions.
+Event ticketing site built with two classmates. Users buy tickets for concerts, raffles, and movies; admins manage events, inventory, and sales.
 
 - User accounts with event browsing, ticket purchase, and order history
 - Admin dashboard for event creation, ticket inventory control, and transaction monitoring
@@ -97,14 +91,14 @@ A full-stack event ticketing platform — users browse and purchase tickets for 
 
 ---
 
-### 🤖 AI Study Assistant &nbsp;·&nbsp; [View Repo →](https://github.com/gvogas/AI-Study-Assistant) &nbsp;·&nbsp; [Devpost →](https://devpost.com/software/ai-study-assistant-giursf)
+### AI Study Assistant &nbsp;·&nbsp; [View Repo →](https://github.com/gvogas/AI-Study-Assistant) &nbsp;·&nbsp; [Devpost →](https://devpost.com/software/ai-study-assistant-giursf)
 
 > **Python · FastAPI · Groq (LLaMA 3.3) · Tavily · SQLite · Vanilla JS** &nbsp;·&nbsp; *Hackathon · MariHacks · Team*
 
 <details>
 <summary>What it does</summary>
 
-A gamified, AI-powered study companion built at MariHacks. Drop in any topic plus optional notes, PDFs, or slides — the app generates study materials and wraps it all in a coin economy, a plant pet, and optional Spotify playback.
+Hackathon project from MariHacks. Give it a topic (and your notes, PDFs, or slides if you have them) and it generates study material. There's also a coin shop, a plant pet that takes damage when you get questions wrong, and Spotify playback, because hackathons.
 
 - AI research agent (Tavily) + content agent (Groq/LLaMA 3.3) generate structured notes, 1–30 flashcards, and 1–20 multiple-choice quiz questions at beginner / intermediate / advanced difficulty
 - Personalized 1–30 day study plan with priority tagging and extra time automatically allocated to weak areas from your latest quiz
@@ -121,14 +115,14 @@ A gamified, AI-powered study companion built at MariHacks. Drop in any topic plu
 
 ---
 
-### 🖥️ Point-of-Sales Patterns &nbsp;·&nbsp; [View Repo →](https://github.com/gvogas/Point-of-Sales_Patterns)
+### Point-of-Sales Patterns &nbsp;·&nbsp; [View Repo →](https://github.com/gvogas/Point-of-Sales_Patterns)
 
 > **Java · JavaFX · MySQL · Maven · JDK 24** &nbsp;·&nbsp; *Final Project — Programming Patterns Course*
 
 <details>
 <summary>What it does</summary>
 
-A full desktop POS system that's also a showcase of applied software design patterns — built to prove the concepts, not just describe them.
+Final project for my programming patterns course: a JavaFX point-of-sale system where every pattern we covered had to actually run in the app.
 
 - Multi-screen JavaFX GUI: main menu, order flow, inventory management, sales analytics, and payment
 - **Factory Method** pattern for payment processing — Cash, Debit, and Credit each implemented as concrete factories
@@ -142,14 +136,14 @@ A full desktop POS system that's also a showcase of applied software design patt
 
 ---
 
-### 🌌 The Rogue Market &nbsp;·&nbsp; [View Repo →](https://github.com/gvogas/Star-wars-Interactive-Web-Application)
+### The Rogue Market &nbsp;·&nbsp; [View Repo →](https://github.com/gvogas/Star-wars-Interactive-Web-Application)
 
 > **JavaScript · HTML · CSS · JSON · XML** &nbsp;·&nbsp; *Final Project — Internet Programming Course*
 
 <details>
 <summary>What it does</summary>
 
-A fully client-side e-commerce simulation with a Star Wars–inspired UI — 12 pages, modular JS architecture, zero backend.
+Star Wars–themed store for my internet programming final. Twelve pages, vanilla JS, no backend.
 
 - Live product search with suggestion dropdown and highlighted infinite-scroll results
 - Shopping cart with per-item quantity control, subtotal, and localStorage persistence
@@ -163,20 +157,20 @@ A fully client-side e-commerce simulation with a Star Wars–inspired UI — 12 
 
 ---
 
-### 🎮 Last Signal &nbsp;·&nbsp; [View Repo →](https://github.com/alexder204/LastSignal) *(Contributor)*
+### Last Signal &nbsp;·&nbsp; [View Repo →](https://github.com/alexder204/LastSignal) *(Contributor)*
 
 > **Unity · C# · ShaderLab · HLSL**
 
 <details>
 <summary>What it does</summary>
 
-A collaborative Unity game project. Contributed to gameplay systems and rendering — the repo is primarily ShaderLab (50%) and HLSL (10%), meaning significant custom shader and visual effects work alongside core C# game logic.
+A Unity game I contribute to — mostly gameplay code and custom shaders (the repo is about half ShaderLab/HLSL).
 
 </details>
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
@@ -201,7 +195,7 @@ A collaborative Unity game project. Contributed to gameplay systems and renderin
 
 ---
 
-## 📚 Areas of Study
+## Areas of Study
 
 | Domain | Skills |
 |---|---|
@@ -214,7 +208,7 @@ A collaborative Unity game project. Contributed to gameplay systems and renderin
 
 ---
 
-*Always building something. Open to collaboration and internship opportunities.*
+Open to internships and collaboration. LinkedIn is the fastest way to reach me.
 
 [![LinkedIn](https://img.shields.io/badge/Let's%20Connect-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/george-vogas-b13944338/)
 [![Devpost](https://img.shields.io/badge/My%20Projects-Devpost-003E54?style=for-the-badge&logo=devpost&logoColor=white)](https://devpost.com/Terminator320)
