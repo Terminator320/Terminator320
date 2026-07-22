@@ -51,6 +51,48 @@
     if (navLinks.classList.contains('open') && !nav.contains(e.target)) closeMenu();
   });
 
+  // ── Theme toggle ──────────────────────────────────────────────
+  // The <head> boot script has already set documentElement.dataset.theme;
+  // this wires the button, persists explicit choices, and follows the OS
+  // again when the choice matches the system preference.
+  const themeToggle = document.getElementById('theme-toggle');
+  const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+      themeToggle.setAttribute('aria-label',
+        theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+    document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
+      meta.setAttribute('content', theme === 'dark' ? '#12142e' : '#f5f6fe');
+    });
+    window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
+  }
+
+  if (themeToggle) {
+    applyTheme(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
+
+    themeToggle.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      try {
+        if ((darkQuery.matches ? 'dark' : 'light') === next) {
+          localStorage.removeItem('theme');
+        } else {
+          localStorage.setItem('theme', next);
+        }
+      } catch (e) {}
+      applyTheme(next);
+    });
+
+    darkQuery.addEventListener('change', (e) => {
+      let stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (err) {}
+      if (!stored) applyTheme(e.matches ? 'dark' : 'light');
+    });
+  }
+
   // ── Active nav link on scroll ─────────────────────────────────
   const sections = document.querySelectorAll('section[id]');
   const navAnchors = document.querySelectorAll('.nav__links a[href^="#"]');

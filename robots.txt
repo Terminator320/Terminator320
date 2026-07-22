@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gvogas.github.io/sitemap.xml

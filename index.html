@@ -3,17 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>George Vogas — CS Student · Robotics & Hockey</title>
-  <meta name="description" content="Portfolio of George Vogas — CS student, robotics enthusiast, and hockey fan building production-quality software across mobile, web, desktop, and game development." />
+  <title>George Vogas | CS Student · Montréal</title>
+  <meta name="description" content="Portfolio of George Vogas, a CS student at Vanier College in Montréal: mobile apps, web platforms, desktop software, and games." />
+  <link rel="canonical" href="https://gvogas.github.io/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#f5f6fe" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#12142e" media="(prefers-color-scheme: dark)" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gvogas.github.io/" />
+  <meta property="og:site_name" content="George Vogas" />
+  <meta property="og:title" content="George Vogas | CS Student · Montréal" />
+  <meta property="og:description" content="Portfolio of George Vogas, a CS student at Vanier College in Montréal: mobile apps, web platforms, desktop software, and games." />
+  <meta property="og:image" content="https://gvogas.github.io/assets/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Hey, I'm George. CS student at Vanier College in Montréal." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="George Vogas | CS Student · Montréal" />
+  <meta name="twitter:description" content="Portfolio of George Vogas, a CS student at Vanier College in Montréal." />
+  <meta name="twitter:image" content="https://gvogas.github.io/assets/og-card.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "George Vogas",
+    "url": "https://gvogas.github.io/",
+    "jobTitle": "Computer Science Student",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Vanier College"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montréal",
+      "addressRegion": "QC",
+      "addressCountry": "CA"
+    },
+    "knowsAbout": ["Software Development", "Mobile Development", "Web Development", "Robotics", "Game Development"],
+    "sameAs": [
+      "https://github.com/gvogas",
+      "https://www.linkedin.com/in/george-vogas-b13944338/",
+      "https://devpost.com/Terminator320"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <script>
+    // Resolve the theme before styles apply to avoid a flash of the wrong scheme.
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css" />
   <script type="importmap">
   {
     "imports": {
-      "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
-      "three/addons/": "https://unpkg.com/three@0.165.0/examples/jsm/"
+      "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
     }
   }
   </script>
@@ -27,19 +86,25 @@
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#hero" class="nav__logo" aria-label="George Vogas — back to top">GV</a>
-      <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links" id="nav-links" role="list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#github">GitHub</a></li>
-        <li><a href="#city">Skyline</a></li>
-        <li><a href="#stack">Stack</a></li>
-        <li><a href="#study">Study</a></li>
-        <li><a href="#contact" class="nav__cta">Contact</a></li>
-      </ul>
+      <a href="#hero" class="nav__logo" aria-label="George Vogas, back to top">GV</a>
+      <div class="nav__right">
+        <ul class="nav__links" id="nav-links" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#github">GitHub</a></li>
+          <li><a href="#city">Skyline</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#study">Study</a></li>
+          <li><a href="#contact" class="nav__cta">Contact</a></li>
+        </ul>
+        <button class="nav__theme" id="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+          <svg class="nav__theme-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="nav__theme-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -49,20 +114,20 @@
     <section class="hero" id="hero">
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__content">
-        <p class="hero__eyebrow">CS Student · Robotics Enthusiast · Hockey Fan · Montréal, QC</p>
+        <p class="hero__eyebrow">CS Student · Vanier College · Montréal, QC</p>
         <h1 class="hero__name">Hey, I'm <span class="hero__name-accent">George.</span></h1>
         <p class="hero__tagline">
-          I build real, production-quality software — not just assignments.<br />
-          From commissioned mobile apps to game engines, autonomous bots to box scores — I ship the whole stack.
+          I build mobile, web, and desktop software, including a<br />
+          client-commissioned scheduling app in daily use.
         </p>
         <div class="hero__stats" id="github-stats-grid" aria-label="Live GitHub stats">
-          <span data-stat="commits"><strong class="github-stats__value"><span class="github-stats__shimmer">000</span></strong> Commits</span>
+          <span data-stat="commits"><strong class="github-stats__value"><span class="github-stats__shimmer" aria-hidden="true">000</span></strong> Commits</span>
           <span class="hero__stats-sep" aria-hidden="true">·</span>
-          <span data-stat="repos"><strong class="github-stats__value"><span class="github-stats__shimmer">00</span></strong> Repos</span>
+          <span data-stat="repos"><strong class="github-stats__value"><span class="github-stats__shimmer" aria-hidden="true">00</span></strong> Repos</span>
           <span class="hero__stats-sep" aria-hidden="true">·</span>
-          <span data-stat="stars"><strong class="github-stats__value"><span class="github-stats__shimmer">00</span></strong> Stars</span>
+          <span data-stat="stars"><strong class="github-stats__value"><span class="github-stats__shimmer" aria-hidden="true">00</span></strong> Stars</span>
           <span class="hero__stats-sep" aria-hidden="true">·</span>
-          <span data-stat="followers"><strong class="github-stats__value"><span class="github-stats__shimmer">00</span></strong> Followers</span>
+          <span data-stat="followers"><strong class="github-stats__value"><span class="github-stats__shimmer" aria-hidden="true">00</span></strong> Followers</span>
         </div>
         <div class="hero__links">
           <a href="https://www.linkedin.com/in/george-vogas-b13944338/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
@@ -88,34 +153,33 @@
     <section class="section" id="about">
       <div class="container">
         <div class="section__head reveal">
-          <p class="section__kicker">01 — Profile</p>
+          <p class="section__kicker">01 · Profile</p>
           <h2 class="section__title">About Me</h2>
         </div>
         <div class="about__grid">
           <div class="about__text reveal">
             <p>
-              I'm a CS student who gravitates toward projects that solve real problems for real users.
-              My background covers full-stack web development, mobile apps, desktop software, and database design —
-              with a strong emphasis on clean architecture and practical patterns.
+              I'm a CS student at Vanier College in Montréal. I've learned primarily by building:
+              a scheduling app a client uses every day, a ticketing site my team deployed,
+              a desktop POS system, and a Unity game I contribute to.
             </p>
             <p>
-              I've shipped a <strong>client-commissioned production app</strong> still actively in use,
-              collaborated on a <strong>Unity game</strong> with custom HLSL shaders, and built everything
-              from MVC web platforms to modular JavaScript e-commerce frontends entirely from scratch.
+              Outside of coursework I work on <strong>robotics</strong>: microcontrollers,
+              PID control loops, and sensor integration. I'm also extending the scheduling app
+              with Wave invoicing.
             </p>
             <p>
-              Off the keyboard, I'm hooked on <strong>robotics</strong> — control loops, microcontroller firmware,
-              and the kind of mechatronic problems that don't care how clean your code looks if the encoder is wrong.
-              And when the laptop closes: <strong>hockey</strong>. Habs fan, weekend skater, occasional armchair coach.
+              Away from the keyboard, I play <strong>hockey</strong> on weekends and follow the Habs.
+              I'm interested in hockey analytics: box scores, possession metrics, shot quality.
             </p>
           </div>
           <div class="about__callout reveal">
-            <p class="about__callout-label">I care about</p>
+            <p class="about__callout-label">Right now</p>
             <ul class="about__callout-list">
-              <li>Clean code structure</li>
-              <li>Meaningful UX</li>
-              <li>Hardware that listens to software</li>
-              <li>Building things that work — on the rink, on the bench, or in production</li>
+              <li>Completing my studies at Vanier College</li>
+              <li>Adding Wave invoicing to the scheduling app</li>
+              <li>Working with microcontrollers and PID control</li>
+              <li>Open to internship opportunities</li>
             </ul>
           </div>
         </div>
@@ -126,12 +190,12 @@
     <section class="section section--alt" id="projects">
       <div class="container">
         <div class="section__head reveal">
-          <p class="section__kicker">02 — Selected Work</p>
+          <p class="section__kicker">02 · Selected Work</p>
           <h2 class="section__title">Projects</h2>
         </div>
         <div class="projects__grid">
 
-          <!-- Scheduling App — featured -->
+          <!-- Scheduling App (featured) -->
           <article class="card card--featured reveal" style="--card-tint:#544CED">
             <div class="card__aside">
               <div class="card__header">
@@ -158,16 +222,16 @@
             </div>
             <div class="card__body">
               <p class="card__desc">
-                A real business application built for a service company to replace paper-based scheduling and fragmented team communication. Not a demo — actively used.
+                Built for a service company that was doing all of its scheduling on paper. It's been in daily use since I delivered it.
               </p>
               <ul class="card__bullets">
                 <li>Real-time appointment calendar with per-employee color coding and admin/employee role separation</li>
                 <li>Full client directory with accent-insensitive search across large record sets</li>
                 <li>In-app photo capture, auto-compression, and background upload to Firebase Storage</li>
                 <li>Invite-only employee onboarding with pre-whitelisted email registration</li>
-                <li>Light/dark mode, text scaling, multi-language support — all persisted across sessions</li>
+                <li>Light/dark mode, text scaling, and multi-language support, all persisted across sessions</li>
               </ul>
-              <p class="card__arch"><strong>Architecture:</strong> Feature-first folder structure; all DB access mediated through per-feature service classes — screens never query Firestore directly.</p>
+              <p class="card__arch"><strong>Architecture:</strong> Feature-first folder structure; all DB access mediated through per-feature service classes, so screens never query Firestore directly.</p>
             </div>
           </article>
 
@@ -199,12 +263,12 @@
               <span class="pill">cPanel</span>
             </div>
             <p class="card__desc">
-              A full-stack event ticketing platform — users browse and purchase tickets for concerts, raffles, and movies; admins manage events, availability, and transactions.
+              Event ticketing site built with two classmates. Users buy tickets for concerts, raffles, and movies; admins manage events, inventory, and sales.
             </p>
             <ul class="card__bullets">
               <li>User accounts with event browsing, ticket purchase, and order history</li>
               <li>Admin dashboard for event creation, ticket inventory control, and transaction monitoring</li>
-              <li>Custom Slim MVC framework with Twig templating — no off-the-shelf CMS</li>
+              <li>Custom Slim MVC framework with Twig templating, no off-the-shelf CMS</li>
               <li>Internationalization support and CI/CD pipeline via GitHub Actions deploying to cPanel</li>
             </ul>
             <p class="card__arch"><strong>Team:</strong> George Vogas · Fadwa Shalby · Lucas Coveyduck</p>
@@ -237,7 +301,7 @@
               <span class="pill">CSS</span>
             </div>
             <p class="card__desc">
-              A gamified, AI-powered study companion built at MariHacks. Drop in any topic plus optional notes, PDFs, or slides — the app generates study materials and wraps it in a coin economy, a plant pet, and optional Spotify playback.
+              Hackathon project from MariHacks. Give it a topic, plus optionally your notes or slides, and it generates study material, with a coin economy and a quiz-linked plant companion layered on top.
             </p>
             <ul class="card__bullets">
               <li>AI research + content agents generate structured notes, flashcards, and quiz questions at multiple difficulty levels</li>
@@ -271,11 +335,11 @@
               <span class="pill">JDK 24</span>
             </div>
             <p class="card__desc">
-              A full desktop POS system that's also a showcase of applied software design patterns — built to prove the concepts, not just describe them.
+              Final project for my programming patterns course: a JavaFX point-of-sale system built around the design patterns covered in class.
             </p>
             <ul class="card__bullets">
               <li>Multi-screen JavaFX GUI: main menu, order flow, inventory management, sales analytics, and payment</li>
-              <li>Factory Method pattern for payment processing — Cash, Debit, and Credit as concrete factories</li>
+              <li>Factory Method pattern for payment processing: Cash, Debit, and Credit as concrete factories</li>
               <li>Multithreaded profit calculator with semaphore synchronization for safe aggregation</li>
               <li>MySQL-backed inventory and sales with full SQL schema and seed data included</li>
             </ul>
@@ -303,12 +367,12 @@
               <span class="pill">XML</span>
             </div>
             <p class="card__desc">
-              A fully client-side e-commerce simulation with a Star Wars–inspired UI — 12 pages, modular JS architecture, zero backend.
+              Star Wars–themed store for my internet programming final. Twelve pages, vanilla JS, no backend.
             </p>
             <ul class="card__bullets">
               <li>Live product search with suggestion dropdown and highlighted infinite-scroll results</li>
               <li>Shopping cart with per-item quantity control, subtotal, and localStorage persistence</li>
-              <li>Full checkout flow — tax calculation, payment method validation, order confirmation</li>
+              <li>Full checkout flow: tax calculation, payment method validation, order confirmation</li>
               <li>Cookie-based user profile system with editable avatar</li>
               <li>Modular JS: AuthModel, CartManagement, ProductModel, SearchModel, FormValidation</li>
             </ul>
@@ -336,7 +400,7 @@
               <span class="pill">Wolfram Language</span>
             </div>
             <p class="card__desc">
-              A collaborative Unity game project. Contributed to gameplay systems and rendering — the repo is primarily ShaderLab (50%) and HLSL (10%), meaning significant custom shader and visual effects work alongside core C# game logic.
+              A Unity game I contribute to, mostly gameplay code and custom shaders. The repo is about half ShaderLab and HLSL.
             </p>
           </article>
 
@@ -348,7 +412,7 @@
     <section class="section" id="github">
       <div class="container">
         <div class="section__head reveal">
-          <p class="section__kicker">03 — Activity</p>
+          <p class="section__kicker">03 · Activity</p>
           <h2 class="section__title">Contribution Activity</h2>
         </div>
         <p class="github-stats__subtitle reveal">
@@ -358,7 +422,7 @@
 
         <div class="github-graph reveal" id="github-graph" aria-busy="true">
           <div class="github-graph__header">
-            <span class="github-graph__total"><span class="github-stats__shimmer">0,000</span> contributions</span>
+            <span class="github-graph__total"><span class="github-stats__shimmer" aria-hidden="true">0,000</span> contributions</span>
           </div>
           <div class="github-graph__tabs" role="tablist" aria-label="Select contribution year"></div>
           <div class="github-graph__scroll">
@@ -394,10 +458,10 @@
     <section class="section city-section" id="city">
       <div class="container">
         <div class="section__head reveal">
-          <p class="section__kicker">04 — Montréal at Night</p>
+          <p class="section__kicker">04 · Montréal at Night</p>
           <h2 class="section__title">Commit Skyline</h2>
         </div>
-        <p class="city__subtitle reveal">Downtown Montréal at night — every public repo is a tower, and the Bell Centre sits where it belongs. Taller towers hold more code and have been pushed more recently. Drag to rotate, scroll to zoom, click a building to open.</p>
+        <p class="city__subtitle reveal">Downtown Montréal at night: every public repo is a tower, and the Bell Centre sits where it belongs. Taller towers hold more code and have been pushed more recently. Drag to rotate, scroll to zoom, click a building to open.</p>
         <div class="city__wrap reveal">
           <div class="city__loading" id="city-loading" aria-live="polite">
             <span class="city__spinner" aria-hidden="true"></span>
@@ -414,7 +478,7 @@
     <section class="section" id="stack">
       <div class="container">
         <div class="section__head reveal">
-          <p class="section__kicker">05 — Toolkit</p>
+          <p class="section__kicker">05 · Toolkit</p>
           <h2 class="section__title">Tech Stack</h2>
         </div>
         <div class="sphere reveal" id="skill-sphere" data-sphere>
@@ -491,7 +555,7 @@
     <section class="section section--alt" id="study">
       <div class="container">
         <div class="section__head reveal">
-          <p class="section__kicker">06 — Focus Areas</p>
+          <p class="section__kicker">06 · Focus Areas</p>
           <h2 class="section__title">Areas of Study</h2>
         </div>
         <div class="study__grid">
@@ -541,7 +605,7 @@
           <div class="study__card reveal">
             <span class="study__icon" aria-hidden="true"><iconify-icon icon="mdi:hockey-sticks"></iconify-icon></span>
             <h3 class="study__title">Hockey &amp; Analytics</h3>
-            <p class="study__skills">Box-score scraping, possession metrics, shot-quality models — coding the game I grew up watching</p>
+            <p class="study__skills">Box-score scraping, possession metrics, shot-quality models</p>
           </div>
 
         </div>
@@ -555,7 +619,7 @@
           <p class="contact__sub">Open to collaboration and internship opportunities</p>
           <h2 class="contact__heading">Always building something.</h2>
           <p class="contact__body">
-            If you have an interesting project, an internship opening, or just want to talk robotics, hockey, or tech in general — drop the puck.
+            If you're hiring interns or have a project in mind, the best way to reach me is LinkedIn.
           </p>
           <div class="contact__links">
             <a href="https://www.linkedin.com/in/george-vogas-b13944338/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">

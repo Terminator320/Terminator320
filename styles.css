@@ -6,6 +6,8 @@
    ============================================================ */
 
 :root {
+  color-scheme: light;
+
   /* Type */
   --serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
   --sans: 'DM Sans', system-ui, -apple-system, sans-serif;
@@ -52,6 +54,30 @@
   --tag-academic:    #5b5f86;  --tag-academic-bg:    rgba(91, 95, 134, 0.10);
   --tag-contributor: #3A06BA;  --tag-contributor-bg: rgba(58, 6, 186, 0.10);
 
+  /* Buttons — accent surfaces that carry white text in both themes */
+  --accent-btn: #3A06BA;
+  --accent-btn-hover: #3F0282;
+
+  /* Theme-swapped surfaces that can't route through the vars above */
+  --nav-glass: rgba(245, 246, 254, 0.82);
+  --nav-glass-solid: rgba(245, 246, 254, 0.97);
+  --card-mix-base: #ffffff;
+  --card-pill-bg: #ffffff;
+  --dot-field: rgba(26, 28, 61, 0.07);
+  --selection-bg: rgba(15, 25, 252, 0.18);
+  --tooltip-bg: #1a1c3d;
+  --tooltip-fg: #f5f6fe;
+
+  /* Contribution heatmap ramp */
+  --heat-0: #e8eafb;
+  --heat-1: #cdd8f7;
+  --heat-2: #7ea2f0;
+  --heat-3: #4b77ee;
+  --heat-4: #3b55cf;
+
+  /* Skill-sphere wireframe line colour (r, g, b) */
+  --sphere-wire: 113, 100, 245;
+
   /* Geometry */
   --radius: 8px;
   --radius-lg: 14px;
@@ -63,6 +89,71 @@
 
   --transition: 0.18s ease;
   --transition-slow: 0.35s ease;
+}
+
+/* ===== Dark theme =====
+   Same editorial system on a deep indigo night surface. Accents shift
+   lighter so text-level uses keep AA contrast; buttons keep their own
+   saturated surface via --accent-btn. */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #12142e;
+  --bg-alt: #171a38;
+  --surface: #1c1f42;
+  --surface-2: #232752;
+
+  --ink: #eef0ff;
+  --text: #c3c7ea;
+  --muted: #8d92bd;
+  --faint: #62678f;
+
+  --line: #2b2f5c;
+  --line-strong: #3a3f75;
+
+  --accent: #6b74ff;
+  --accent-strong: #98a0ff;
+  --accent-deep: #b3b9ff;
+  --accent-soft: rgba(107, 116, 255, 0.13);
+  --accent-line: rgba(107, 116, 255, 0.38);
+
+  --violet: #8a7eff;
+  --violet-deep: #a89dff;
+  --violet-soft: rgba(138, 126, 255, 0.14);
+
+  --cyan: #54d5ff;
+  --cyan-soft: rgba(84, 213, 255, 0.12);
+
+  --tag-production:  #b3a3ff;  --tag-production-bg:  rgba(138, 126, 255, 0.16);
+  --tag-commissioned:#b3a3ff;  --tag-commissioned-bg:rgba(138, 126, 255, 0.16);
+  --tag-deployed:    #54d5ff;  --tag-deployed-bg:    rgba(84, 213, 255, 0.13);
+  --tag-team:        #54d5ff;  --tag-team-bg:        rgba(84, 213, 255, 0.13);
+  --tag-hackathon:   #a89dff;  --tag-hackathon-bg:   rgba(138, 126, 255, 0.16);
+  --tag-academic:    #9ba0c8;  --tag-academic-bg:    rgba(155, 160, 200, 0.14);
+  --tag-contributor: #b3a3ff;  --tag-contributor-bg: rgba(138, 126, 255, 0.16);
+
+  --accent-btn: #4a3fd6;
+  --accent-btn-hover: #5a50e8;
+
+  --nav-glass: rgba(18, 20, 46, 0.82);
+  --nav-glass-solid: rgba(18, 20, 46, 0.97);
+  --card-mix-base: #1c1f42;
+  --card-pill-bg: #14163a;
+  --dot-field: rgba(214, 218, 255, 0.06);
+  --selection-bg: rgba(107, 116, 255, 0.35);
+  --tooltip-bg: #eef0ff;
+  --tooltip-fg: #12142e;
+
+  --heat-0: #1e2148;
+  --heat-1: #33396f;
+  --heat-2: #4d59c9;
+  --heat-3: #6b74ff;
+  --heat-4: #9aa1ff;
+
+  --sphere-wire: 138, 126, 255;
+
+  --shadow-card: 0 18px 40px -28px rgba(0, 0, 0, 0.55);
+  --shadow-lift: 0 26px 55px -30px rgba(0, 0, 0, 0.65);
 }
 
 /* ===== Reset ===== */
@@ -78,7 +169,7 @@ html {
 ::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--faint); }
 
-::selection { background: rgba(15, 25, 252, 0.18); color: var(--ink); }
+::selection { background: var(--selection-bg); color: var(--ink); }
 
 body {
   font-family: var(--sans);
@@ -118,7 +209,7 @@ h1, h2, h3, h4 {
   top: calc(12px + env(safe-area-inset-top, 0px));
   left: 12px;
   z-index: 9999;
-  background: var(--accent-strong);
+  background: var(--accent-btn);
   color: #fff;
   font-family: var(--mono);
   font-size: var(--font-sm);
@@ -175,7 +266,7 @@ h1, h2, h3, h4 {
   transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 .nav.scrolled {
-  background: rgba(245, 246, 254, 0.82);
+  background: var(--nav-glass);
   backdrop-filter: blur(14px) saturate(150%);
   -webkit-backdrop-filter: blur(14px) saturate(150%);
   border-bottom-color: var(--line);
@@ -236,11 +327,33 @@ h1, h2, h3, h4 {
   margin-left: 8px;
 }
 .nav__links a.nav__cta:hover {
-  background: var(--accent-strong);
+  background: var(--accent-btn);
   color: #fff;
-  border-color: var(--accent-strong);
+  border-color: var(--accent-btn);
 }
 .nav__links a.nav__cta::after { display: none; }
+
+.nav__right { display: flex; align-items: center; gap: 6px; }
+
+.nav__theme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--muted);
+  cursor: pointer;
+  transition: color var(--transition), background var(--transition),
+              border-color var(--transition);
+}
+.nav__theme:hover { color: var(--ink); background: var(--accent-soft); }
+.nav__theme svg { width: 17px; height: 17px; }
+.nav__theme-sun { display: none; }
+[data-theme="dark"] .nav__theme-moon { display: none; }
+[data-theme="dark"] .nav__theme-sun { display: block; }
 
 .nav__hamburger {
   display: none;
@@ -323,7 +436,7 @@ h1, h2, h3, h4 {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(26, 28, 61, 0.07) 1px, transparent 1.4px);
+  background-image: radial-gradient(var(--dot-field) 1px, transparent 1.4px);
   background-size: 26px 26px;
   mask-image: radial-gradient(ellipse 78% 66% at 50% 42%, #000 0%, transparent 72%);
   -webkit-mask-image: radial-gradient(ellipse 78% 66% at 50% 42%, #000 0%, transparent 72%);
@@ -447,10 +560,10 @@ h1, h2, h3, h4 {
 .btn:hover { transform: translateY(-2px); }
 .btn:active { transform: translateY(0) scale(0.99); }
 
-.btn--primary { background: var(--accent-strong); color: #fff; border-color: var(--accent-strong); }
+.btn--primary { background: var(--accent-btn); color: #fff; border-color: var(--accent-btn); }
 .btn--primary:hover {
-  background: var(--accent-deep);
-  border-color: var(--accent-deep);
+  background: var(--accent-btn-hover);
+  border-color: var(--accent-btn-hover);
   box-shadow: 0 12px 26px -14px rgba(58, 6, 186, 0.7);
 }
 .btn--secondary {
@@ -529,7 +642,7 @@ h1, h2, h3, h4 {
 .card {
   --tint: var(--card-tint, var(--accent));
   position: relative;
-  background: color-mix(in srgb, var(--tint) 14%, #fff);
+  background: color-mix(in srgb, var(--tint) 14%, var(--card-mix-base));
   border: 1px solid color-mix(in srgb, var(--tint) 34%, var(--line));
   border-radius: var(--radius-lg);
   padding: 28px;
@@ -647,7 +760,7 @@ h1, h2, h3, h4 {
 .card__stack { display: flex; flex-wrap: wrap; gap: 6px; }
 /* Project tech chips read as crisp white on the tinted card. */
 .card__stack .pill {
-  background: #fff;
+  background: var(--card-pill-bg);
   color: var(--text);
   border-color: color-mix(in srgb, var(--tint) 26%, var(--line-strong));
 }
@@ -1159,11 +1272,11 @@ h1, h2, h3, h4 {
 }
 .github-graph__cell:focus { outline: none; }
 /* Low → high activity ramp in the brand blue. */
-.github-graph__cell[data-level="0"] { background: #e8eafb; box-shadow: inset 0 0 0 1px var(--line); }
-.github-graph__cell[data-level="1"] { background: #cdd8f7; }
-.github-graph__cell[data-level="2"] { background: #7ea2f0; }
-.github-graph__cell[data-level="3"] { background: #4b77ee; }
-.github-graph__cell[data-level="4"] { background: #3b55cf; }
+.github-graph__cell[data-level="0"] { background: var(--heat-0); box-shadow: inset 0 0 0 1px var(--line); }
+.github-graph__cell[data-level="1"] { background: var(--heat-1); }
+.github-graph__cell[data-level="2"] { background: var(--heat-2); }
+.github-graph__cell[data-level="3"] { background: var(--heat-3); }
+.github-graph__cell[data-level="4"] { background: var(--heat-4); }
 
 .github-graph__legend {
   display: flex;
@@ -1182,8 +1295,8 @@ h1, h2, h3, h4 {
   position: absolute;
   top: 0; left: 0;
   transform: translate(-50%, calc(-100% - 8px));
-  background: var(--ink);
-  color: #f5f6fe;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-fg);
   border-radius: 6px;
   padding: 6px 10px;
   font-family: var(--mono);
@@ -1288,7 +1401,7 @@ h1, h2, h3, h4 {
     position: fixed;
     top: calc(var(--nav-h) + env(safe-area-inset-top, 0px));
     left: 0; right: 0;
-    background: rgba(245, 246, 254, 0.97);
+    background: var(--nav-glass-solid);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--line-strong);
